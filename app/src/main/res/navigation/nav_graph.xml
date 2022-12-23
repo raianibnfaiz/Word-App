@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/letterListFragement">
+
+    <fragment
+        android:id="@+id/letterListFragement"
+        android:name="com.example.wordsapp.LetterListFragement"
+        android:label="fragment_letter_list"
+        tools:layout="@layout/fragment_letter_list" >
+        <action
+            android:id="@+id/action_letterListFragement_to_wordListFragement"
+            app:destination="@id/wordListFragement" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordListFragement"
+        android:name="com.example.wordsapp.WordListFragement"
+        android:label="fragment_word_list"
+        tools:layout="@layout/fragment_word_list" >
+        <argument
+            android:name="letter"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_wordListFragement_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.wordsapp.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="detail"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailFragment_to_nameDisplayFragment"
+            app:destination="@id/nameDisplayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nameDisplayFragment"
+        android:name="com.example.wordsapp.NameDisplayFragment"
+        android:label="fragment_name_display"
+        tools:layout="@layout/fragment_name_display" >
+        <argument android:name="name"
+            app:argType="string" />
+    </fragment>
+</navigation>
